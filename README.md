@@ -42,6 +42,7 @@ The catalogue currently contains **37 manually curated provider/platform entries
 ## Global model discovery and automatic sync
 The model catalogue is refreshed by `.github/workflows/refresh-model-catalogue.yml` every Monday and can be started manually from GitHub Actions. The workflow currently imports public discovery metadata from:
 - OpenRouter public model catalogue: `https://openrouter.ai/api/v1/models`
+- Models.dev structured model catalogue: `https://models.dev/models.json?type=all`
 - Hugging Face Hub public model metadata: `https://huggingface.co/api/models?limit=100&sort=downloads&direction=-1&full=true`
 
 The script writes `data/discovered-models.json`; the website displays a searchable snapshot. Hugging Face's current query is a bounded popular-model sample, **not the entire Hub**. OpenRouter is only the catalogue available through OpenRouter, not every model worldwide.
