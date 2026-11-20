@@ -52,3 +52,33 @@ This is a community discovery directory, not a benchmark authority, uptime monit
 - Vercel AI Gateway provider catalogue: https://vercel.com/ai-gateway/models/providers
 
 These cross-check pages help discover additional providers and integrations. Individual entries should still link to the provider's own official documentation. Partner listings do not establish price, uptime, model rights or universal feature support.
+
+
+## Global discovery registries and provider ecosystems
+These are discovery inputs, not substitutes for primary provider evidence:
+
+- Models.dev live catalogue and API: https://models.dev/ — open-source structured provider/model database; API examples include https://models.dev/api.json?type=all, https://models.dev/models.json?type=all and https://models.dev/catalog.json?type=all.
+- Hugging Face Inference Providers: https://huggingface.co/docs/inference-providers/en/providers — provider integration index; each provider's own docs remain the authority for its terms.
+- OpenRouter model catalogue and rankings: https://openrouter.ai/models and https://openrouter.ai/rankings — useful for model/provider discovery and usage-based rankings, not universal market share.
+- Hugging Face Hub API: https://huggingface.co/docs/hub/api — model, dataset and organization discovery; repository metadata and model cards must be checked individually.
+- Artificial Analysis: https://artificialanalysis.ai/ — independent model evaluations and comparisons; methodology, coverage and access conditions must be reviewed.
+- LMArena: https://lmarena.ai/ — human-preference evaluation context; rankings are not a substitute for task-specific testing.
+
+### Additional provider documentation discovered through the Hugging Face ecosystem
+- Baseten: https://docs.baseten.co/
+- Cerebras: https://inference-docs.cerebras.ai/
+- CoreWeave: https://docs.coreweave.com/
+- DeepInfra: https://deepinfra.com/docs
+- DigitalOcean Gradient AI: https://docs.digitalocean.com/products/gradient-ai/
+- Featherless AI: https://docs.featherless.ai/
+- Liquid AI: https://docs.liquid.ai/
+- Moonshot AI: https://platform.moonshot.ai/docs/
+- Nebius AI: https://docs.nebius.com/
+- Novita AI: https://novita.ai/docs
+- Parasail: https://docs.parasail.io/
+- Prime Intellect: https://docs.primeintellect.ai/
+- Reka AI: https://docs.reka.ai/
+- Tencent Hunyuan: https://cloud.tencent.com/document/product/1729
+- Z.ai / Zhipu AI: https://docs.z.ai/
+
+Do not infer a provider's country, ownership, legal jurisdiction, model license or data residency from its name. Add those fields only when supported by a direct authoritative source.
