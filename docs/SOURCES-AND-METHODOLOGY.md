@@ -40,7 +40,7 @@ The catalogue currently contains **37 manually curated provider/platform entries
 
 
 ## Model discovery sync
-The scheduled model sync currently uses two public discovery endpoints:
+The scheduled model sync currently uses three public discovery endpoints:
 - OpenRouter public model catalogue: https://openrouter.ai/api/v1/models
 - Hugging Face Hub public model metadata: https://huggingface.co/api/models?limit=100&sort=downloads&direction=-1&full=true
 
@@ -49,3 +49,11 @@ The first is a gateway-specific catalogue; the second is a bounded sample of pop
 License metadata is only copied from a public model card field when present. Missing metadata remains explicitly unknown. Model cards and linked license files must still be reviewed. If an upstream source fails, prior records from that source are retained with a stale marker; successful source refreshes replace that source's snapshot.
 
 Do not add endpoints that require private tokens to a public workflow without a security review. Do not store credentials in the data catalogue. Respect provider terms, API rate limits, pagination and attribution requirements.
+
+
+## Source health dashboard
+The website's Source health section separates two different signals:
+- Model-discovery results from each adapter in `data/discovered-models.json`, including success/failure, record count and check timestamp.
+- Provider URL reachability from `data/source-status.json`, which is an HTTP HEAD check against configured provider URLs.
+
+A registry entry without a discovery result is shown as “Not checked”; it must not be interpreted as offline. A failed HTTP request may reflect a blocked HEAD method, rate limit, CI network restriction or temporary outage. These signals do not verify API functionality, pricing correctness, model quality, regional access or account entitlements. Always follow the upstream source link for authoritative details.
