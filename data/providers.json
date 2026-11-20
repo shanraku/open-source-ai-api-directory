@@ -477,5 +477,260 @@
     "source_url": "https://docs.perplexity.ai/",
     "status_url": "",
     "reviewed": "2026-11-20"
+  },
+  {
+    "id": "baseten",
+    "name": "Baseten",
+    "type": "hosted-api",
+    "type_label": "Hosted API / AI platform",
+    "access": "paid",
+    "access_label": "Check provider terms",
+    "summary": "Model deployment and inference platform.",
+    "capabilities": [
+      "See official documentation"
+    ],
+    "models": [],
+    "docs_url": "https://docs.baseten.co/",
+    "source_url": "https://docs.baseten.co/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "cerebras",
+    "name": "Cerebras",
+    "type": "hosted-api",
+    "type_label": "Hosted API / AI platform",
+    "access": "paid",
+    "access_label": "Check provider terms",
+    "summary": "Hosted inference services and developer API.",
+    "capabilities": [
+      "See official documentation"
+    ],
+    "models": [],
+    "docs_url": "https://inference-docs.cerebras.ai/",
+    "source_url": "https://inference-docs.cerebras.ai/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "coreweave",
+    "name": "CoreWeave",
+    "type": "hosted-api",
+    "type_label": "Hosted API / AI platform",
+    "access": "paid",
+    "access_label": "Check provider terms",
+    "summary": "Cloud infrastructure and AI inference services.",
+    "capabilities": [
+      "See official documentation"
+    ],
+    "models": [],
+    "docs_url": "https://docs.coreweave.com/",
+    "source_url": "https://docs.coreweave.com/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "deepinfra",
+    "name": "DeepInfra",
+    "type": "hosted-api",
+    "type_label": "Hosted API / AI platform",
+    "access": "paid",
+    "access_label": "Check provider terms",
+    "summary": "Hosted inference APIs for open and community models.",
+    "capabilities": [
+      "See official documentation"
+    ],
+    "models": [],
+    "docs_url": "https://deepinfra.com/docs",
+    "source_url": "https://deepinfra.com/docs",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "digitalocean",
+    "name": "DigitalOcean",
+    "type": "hosted-api",
+    "type_label": "Hosted API / AI platform",
+    "access": "paid",
+    "access_label": "Check provider terms",
+    "summary": "AI inference and application platform.",
+    "capabilities": [
+      "See official documentation"
+    ],
+    "models": [],
+    "docs_url": "https://docs.digitalocean.com/products/gradient-ai/",
+    "source_url": "https://docs.digitalocean.com/products/gradient-ai/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "featherless",
+    "name": "Featherless AI",
+    "type": "hosted-api",
+    "type_label": "Hosted API / AI platform",
+    "access": "paid",
+    "access_label": "Check provider terms",
+    "summary": "Hosted inference for a broad catalogue of open models.",
+    "capabilities": [
+      "See official documentation"
+    ],
+    "models": [],
+    "docs_url": "https://docs.featherless.ai/",
+    "source_url": "https://docs.featherless.ai/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "liquid",
+    "name": "Liquid AI",
+    "type": "hosted-api",
+    "type_label": "Hosted API / AI platform",
+    "access": "paid",
+    "access_label": "Check provider terms",
+    "summary": "Efficient AI models and deployment documentation.",
+    "capabilities": [
+      "See official documentation"
+    ],
+    "models": [],
+    "docs_url": "https://docs.liquid.ai/",
+    "source_url": "https://docs.liquid.ai/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "moonshotai",
+    "name": "Moonshot AI",
+    "type": "hosted-api",
+    "type_label": "Hosted API / AI platform",
+    "access": "paid",
+    "access_label": "Check provider terms",
+    "summary": "Kimi model APIs and developer documentation.",
+    "capabilities": [
+      "See official documentation"
+    ],
+    "models": [],
+    "docs_url": "https://platform.moonshot.ai/docs/",
+    "source_url": "https://platform.moonshot.ai/docs/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "nebius",
+    "name": "Nebius AI",
+    "type": "hosted-api",
+    "type_label": "Hosted API / AI platform",
+    "access": "paid",
+    "access_label": "Check provider terms",
+    "summary": "AI cloud and model inference platform.",
+    "capabilities": [
+      "See official documentation"
+    ],
+    "models": [],
+    "docs_url": "https://docs.nebius.com/",
+    "source_url": "https://docs.nebius.com/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "novita",
+    "name": "Novita AI",
+    "type": "hosted-api",
+    "type_label": "Hosted API / AI platform",
+    "access": "paid",
+    "access_label": "Check provider terms",
+    "summary": "Model inference and AI compute APIs.",
+    "capabilities": [
+      "See official documentation"
+    ],
+    "models": [],
+    "docs_url": "https://novita.ai/docs",
+    "source_url": "https://novita.ai/docs",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "parasail",
+    "name": "Parasail",
+    "type": "hosted-api",
+    "type_label": "Hosted API / AI platform",
+    "access": "paid",
+    "access_label": "Check provider terms",
+    "summary": "Hosted model inference infrastructure.",
+    "capabilities": [
+      "See official documentation"
+    ],
+    "models": [],
+    "docs_url": "https://docs.parasail.io/",
+    "source_url": "https://docs.parasail.io/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "primeintellect",
+    "name": "Prime Intellect",
+    "type": "hosted-api",
+    "type_label": "Hosted API / AI platform",
+    "access": "paid",
+    "access_label": "Check provider terms",
+    "summary": "Distributed compute and model training/inference infrastructure.",
+    "capabilities": [
+      "See official documentation"
+    ],
+    "models": [],
+    "docs_url": "https://docs.primeintellect.ai/",
+    "source_url": "https://docs.primeintellect.ai/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "reka",
+    "name": "Reka AI",
+    "type": "hosted-api",
+    "type_label": "Hosted API / AI platform",
+    "access": "paid",
+    "access_label": "Check provider terms",
+    "summary": "Multimodal model APIs and developer documentation.",
+    "capabilities": [
+      "See official documentation"
+    ],
+    "models": [],
+    "docs_url": "https://docs.reka.ai/",
+    "source_url": "https://docs.reka.ai/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "tencent-hunyuan",
+    "name": "Tencent Hunyuan",
+    "type": "hosted-api",
+    "type_label": "Hosted API / AI platform",
+    "access": "paid",
+    "access_label": "Check provider terms",
+    "summary": "Tencent cloud AI models and API documentation.",
+    "capabilities": [
+      "See official documentation"
+    ],
+    "models": [],
+    "docs_url": "https://cloud.tencent.com/document/product/1729",
+    "source_url": "https://cloud.tencent.com/document/product/1729",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "zai",
+    "name": "Z.ai / Zhipu AI",
+    "type": "hosted-api",
+    "type_label": "Hosted API / AI platform",
+    "access": "paid",
+    "access_label": "Check provider terms",
+    "summary": "GLM model APIs and developer documentation.",
+    "capabilities": [
+      "See official documentation"
+    ],
+    "models": [],
+    "docs_url": "https://docs.z.ai/",
+    "source_url": "https://docs.z.ai/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
   }
 ]
