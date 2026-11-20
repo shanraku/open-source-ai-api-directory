@@ -14,14 +14,12 @@
       ],
       "url": "https://models.dev/",
       "api": [
-        "https://models.dev/api.json?type=all",
-        "https://models.dev/models.json?type=all",
-        "https://models.dev/catalog.json?type=all"
+        "https://models.dev/models.json?type=all"
       ],
       "trust": "Community-maintained structured catalogue",
       "use": "Broad model/provider discovery; verify important facts against official sources.",
-      "refresh": "Upstream-maintained; check on scheduled refresh",
-      "limitations": "Large catalogue; not every record is a primary-source assertion."
+      "refresh": "Weekly scheduled discovery import; endpoint is a structured public JSON catalogue",
+      "limitations": "Community-maintained metadata; not every record is a primary-source assertion. Model weights status, licensing, prices and availability must be verified at upstream sources."
     },
     {
       "id": "huggingface-hub",
