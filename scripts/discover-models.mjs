@@ -86,6 +86,79 @@ try {
   sourceStatus["huggingface-hub"] = { ok: false, error: error.message, checked_at: now };
 }
 
+
+
+function collectModelsDevRecords(payload) {
+  const found = [];
+  const seen = new Set();
+  function walk(value, path = []) {
+    if (!value || typeof value !== "object") return;
+    if (Array.isArray(value)) {
+      for (const child of value) walk(child, path);
+      return;
+    }
+    const name = typeof value.name === "string" ? value.name : "";
+    const hasModelMetadata = Boolean(
+      value.limit || value.cost || value.modalities ||
+      value.open_weights !== undefined || value.tool_call !== undefined ||
+      value.reasoning !== undefined
+    );
+    if (name && hasModelMetadata) {
+      const rawId = String(value.id || value.slug || path[path.length - 1] || name);
+      const provider = String(value.provider || value.owned_by || path[0] || "Models.dev");
+      const limit = value.limit && typeof value.limit === "object" ? value.limit : {};
+      const modalities = value.modalities && typeof value.modalities === "object"
+        ? value.modalities : {};
+      const inputModalities = Array.isArray(modalities.input) ? modalities.input : [];
+      const outputModalities = Array.isArray(modalities.output) ? modalities.output : [];
+      const modality = [...new Set([...inputModalities, ...outputModalities])].join(", ") || null;
+      const cost = value.cost && typeof value.cost === "object" ? value.cost : {};
+      const pricingParts = [];
+      if (cost.input != null) pricingParts.push("input " + cost.input);
+      if (cost.output != null) pricingParts.push("output " + cost.output);
+      const key = (provider + ":" + rawId).toLowerCase();
+      if (!seen.has(key)) {
+        seen.add(key);
+        found.push({
+          id: "models-dev:" + key.replace(/[^a-z0-9._:-]/g, "-"),
+          name,
+          provider,
+          source: "models-dev",
+          source_url: "https://models.dev/",
+          upstream_id: rawId,
+          description: String(value.description || "").slice(0, 500),
+          context_length: Number.isFinite(limit.context) ? limit.context : null,
+          modality,
+          license: value.open_weights === true
+            ? "Listed as open weights by Models.dev; verify the upstream license"
+            : "Not verified by this discovery record",
+          license_url: "",
+          pricing_reference: pricingParts.length
+            ? "Models.dev reference: " + pricingParts.join("; ") + " (verify current provider pricing)"
+            : "Check the original provider for current pricing",
+          evidence: "Models.dev public structured catalogue",
+          confidence: "discovery-only"
+        });
+      }
+    }
+    for (const [key, child] of Object.entries(value)) {
+      if (child && typeof child === "object") walk(child, [...path, key]);
+    }
+  }
+  walk(payload);
+  return found;
+}
+
+try {
+  const payload = await getJson("https://models.dev/models.json?type=all");
+  const list = collectModelsDevRecords(payload);
+  if (!list.length) throw new Error("No model records matched the expected metadata shape");
+  for (const model of list) put(model);
+  sourceStatus["models-dev"] = { ok: true, records: list.length, checked_at: now };
+} catch (error) {
+  sourceStatus["models-dev"] = { ok: false, error: error.message, checked_at: now };
+}
+
 // Keep previously discovered records when an upstream temporarily fails.
 // Mark their source state so stale records are not mistaken for fresh ones.
 for (const [id, model] of byId) {
