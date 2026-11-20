@@ -56,3 +56,7 @@ Run manually with Node.js 20 or newer:
     node scripts/discover-models.mjs
 
 This command makes public HTTP requests; it is separate from the static website. Do not run it in an offline environment.
+
+
+## Source health dashboard
+The website includes a Source health dashboard that keeps discovery adapter results separate from provider URL reachability checks. It displays registered sources, the latest discovery result when available, record counts, check timestamps and clear “Not checked” states. These are transparency signals only, not guarantees of API uptime, pricing, model availability or service quality. See docs/SOURCES-AND-METHODOLOGY.md for interpretation.
