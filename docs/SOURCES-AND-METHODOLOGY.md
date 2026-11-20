@@ -32,3 +32,23 @@ The scheduled script sends an unauthenticated HTTP HEAD request to a listed stat
 - Date-stamp reviews and remove dead or misleading entries.
 
 This is a community discovery directory, not a benchmark authority, uptime monitor, legal opinion or endorsement.
+
+## Additional official provider documentation
+- Groq: https://console.groq.com/docs
+- Together AI: https://docs.together.ai/
+- Fireworks AI: https://docs.fireworks.ai/
+- DeepSeek: https://api-docs.deepseek.com/
+- OpenRouter: https://openrouter.ai/docs
+- Replicate: https://replicate.com/docs
+- Cloudflare Workers AI: https://developers.cloudflare.com/workers-ai/
+- Amazon Bedrock: https://docs.aws.amazon.com/bedrock/
+- Microsoft Azure AI Foundry: https://learn.microsoft.com/azure/ai-foundry/
+- NVIDIA NIM: https://docs.nvidia.com/nim/
+- xAI API: https://docs.x.ai/docs
+- Perplexity API: https://docs.perplexity.ai/
+
+## Discovery cross-checks (not primary evidence)
+- Hugging Face Inference Providers partner overview: https://huggingface.co/docs/inference-providers/en/index
+- Vercel AI Gateway provider catalogue: https://vercel.com/ai-gateway/models/providers
+
+These cross-check pages help discover additional providers and integrations. Individual entries should still link to the provider's own official documentation. Partner listings do not establish price, uptime, model rights or universal feature support.
