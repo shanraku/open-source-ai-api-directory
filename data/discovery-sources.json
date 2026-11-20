@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-20",
+  "policy": "Use registries for discovery; verify facts, licenses, prices and availability at primary sources.",
+  "sources": [
+    {
+      "id": "models-dev",
+      "name": "Models.dev",
+      "scope": [
+        "canonical-models",
+        "providers",
+        "model-metadata",
+        "pricing-metadata"
+      ],
+      "url": "https://models.dev/",
+      "api": [
+        "https://models.dev/api.json?type=all",
+        "https://models.dev/models.json?type=all",
+        "https://models.dev/catalog.json?type=all"
+      ],
+      "trust": "Community-maintained structured catalogue",
+      "use": "Broad model/provider discovery; verify important facts against official sources.",
+      "refresh": "Upstream-maintained; check on scheduled refresh",
+      "limitations": "Large catalogue; not every record is a primary-source assertion."
+    },
+    {
+      "id": "huggingface-hub",
+      "name": "Hugging Face Hub",
+      "scope": [
+        "open-model-repositories",
+        "datasets",
+        "model-cards",
+        "organizations"
+      ],
+      "url": "https://huggingface.co/docs/hub/api",
+      "api": [
+        "https://huggingface.co/api/models",
+        "https://huggingface.co/api/datasets",
+        "https://huggingface.co/api/organizations"
+      ],
+      "trust": "Platform API and repository metadata",
+      "use": "Discover model repositories, model cards and dataset records.",
+      "refresh": "Live API; respect pagination and rate limits",
+      "limitations": "Repository metadata does not establish license compatibility or model quality."
+    },
+    {
+      "id": "hf-inference-providers",
+      "name": "Hugging Face Inference Providers",
+      "scope": [
+        "hosted-inference-providers",
+        "provider-routing",
+        "model-serving"
+      ],
+      "url": "https://huggingface.co/docs/inference-providers/en/providers",
+      "api": [
+        "https://router.huggingface.co/v1/models"
+      ],
+      "trust": "Official platform documentation",
+      "use": "Discover integrated inference provider partners.",
+      "refresh": "Documentation/API may change",
+      "limitations": "Partner listing does not guarantee every model, region or feature is available."
+    },
+    {
+      "id": "openrouter",
+      "name": "OpenRouter",
+      "scope": [
+        "served-models",
+        "provider-routing",
+        "usage-rankings"
+      ],
+      "url": "https://openrouter.ai/docs",
+      "api": [
+        "https://openrouter.ai/api/v1/models"
+      ],
+      "trust": "Provider API and platform data",
+      "use": "Discover models available through its gateway and provider mappings.",
+      "refresh": "Live API; respect rate limits",
+      "limitations": "Catalogue is limited to OpenRouter's integrations; not a global inventory."
+    },
+    {
+      "id": "artificial-analysis",
+      "name": "Artificial Analysis",
+      "scope": [
+        "model-evaluations",
+        "latency",
+        "pricing-comparisons"
+      ],
+      "url": "https://artificialanalysis.ai/",
+      "api": [],
+      "trust": "Independent evaluation publisher",
+      "use": "Supplementary benchmark and comparison evidence.",
+      "refresh": "Publisher-controlled",
+      "limitations": "Coverage, methodology and access vary; never treat as universal truth."
+    },
+    {
+      "id": "lmarena",
+      "name": "LMArena",
+      "scope": [
+        "human-preference-evaluations",
+        "leaderboards"
+      ],
+      "url": "https://lmarena.ai/",
+      "api": [],
+      "trust": "Human-preference evaluation platform",
+      "use": "Supplementary preference signals.",
+      "refresh": "Publisher-controlled",
+      "limitations": "Rankings are task- and sample-dependent; not a full capability evaluation."
+    },
+    {
+      "id": "vercel-ai-gateway",
+      "name": "Vercel AI Gateway",
+      "scope": [
+        "provider-discovery",
+        "model-catalogue",
+        "routing"
+      ],
+      "url": "https://vercel.com/ai-gateway",
+      "api": [],
+      "trust": "Platform provider catalogue",
+      "use": "Cross-check provider/model integrations.",
+      "refresh": "Publisher-controlled",
+      "limitations": "Reflects Vercel's supported catalogue, not every provider worldwide."
+    },
+    {
+      "id": "github-models",
+      "name": "GitHub Models",
+      "scope": [
+        "model-catalogue",
+        "developer-access",
+        "model-playground"
+      ],
+      "url": "https://docs.github.com/en/github-models",
+      "api": [],
+      "trust": "Official GitHub documentation",
+      "use": "Discover models available within GitHub's model tooling.",
+      "refresh": "Publisher-controlled",
+      "limitations": "Access and quotas depend on GitHub plan, preview terms and availability."
+    },
+    {
+      "id": "aws-bedrock-catalogue",
+      "name": "Amazon Bedrock model catalogue",
+      "scope": [
+        "managed-foundation-models",
+        "regional-availability"
+      ],
+      "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html",
+      "api": [],
+      "trust": "Official cloud provider documentation",
+      "use": "Verify Bedrock model availability and region support.",
+      "refresh": "Provider documentation",
+      "limitations": "Requires region-specific verification; marketplace listings may differ."
+    },
+    {
+      "id": "azure-foundry-catalogue",
+      "name": "Microsoft Foundry model catalogue",
+      "scope": [
+        "managed-model-catalogue",
+        "deployment-options"
+      ],
+      "url": "https://learn.microsoft.com/azure/ai-foundry/",
+      "api": [],
+      "trust": "Official cloud provider documentation",
+      "use": "Discover and verify models available through Azure.",
+      "refresh": "Provider documentation",
+      "limitations": "Availability varies by region, subscription and deployment type."
+    },
+    {
+      "id": "google-model-garden",
+      "name": "Google Cloud Model Garden",
+      "scope": [
+        "managed-model-catalogue",
+        "partner-models"
+      ],
+      "url": "https://cloud.google.com/model-garden",
+      "api": [],
+      "trust": "Official cloud provider catalogue",
+      "use": "Discover models and deployment options on Google Cloud.",
+      "refresh": "Provider documentation",
+      "limitations": "Access and deployment options depend on region and account."
+    },
+    {
+      "id": "nvidia-build",
+      "name": "NVIDIA NGC / AI models",
+      "scope": [
+        "model-catalogue",
+        "containers",
+        "deployment-artifacts"
+      ],
+      "url": "https://catalog.ngc.nvidia.com/",
+      "api": [],
+      "trust": "Official vendor catalogue",
+      "use": "Discover deployable model artifacts and inference containers.",
+      "refresh": "Publisher-controlled",
+      "limitations": "Container availability, hardware and license terms differ per artifact."
+    }
+  ]
+}
