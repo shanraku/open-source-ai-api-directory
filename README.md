@@ -37,3 +37,21 @@ The project maintains a machine-readable registry of upstream discovery sources 
 These sources are deliberately not merged into one unqualified "complete world list": their coverage overlaps, schemas differ, and many are not primary sources. Use them to discover entries, deduplicate by canonical model/provider identifiers, and verify pricing, licenses, availability and technical claims against official documentation.
 
 The catalogue currently contains **37 manually curated provider/platform entries**. The upstream registries expand discovery beyond this starter set; they are not all represented as individual entries yet.
+
+
+## Global model discovery and automatic sync
+The model catalogue is refreshed by `.github/workflows/refresh-model-catalogue.yml` every Monday and can be started manually from GitHub Actions. The workflow currently imports public discovery metadata from:
+- OpenRouter public model catalogue: `https://openrouter.ai/api/v1/models`
+- Hugging Face Hub public model metadata: `https://huggingface.co/api/models?limit=100&sort=downloads&direction=-1&full=true`
+
+The script writes `data/discovered-models.json`; the website displays a searchable snapshot. Hugging Face's current query is a bounded popular-model sample, **not the entire Hub**. OpenRouter is only the catalogue available through OpenRouter, not every model worldwide.
+
+Records are labelled discovery-only. Missing license metadata is shown as unknown/unverified; context length and modality appear only when returned by upstream metadata. A model appearing in a catalogue does not mean it is free, open source, safe, available in every country, or available through every provider. Verify license, model card, pricing, data handling, region and terms at the original source before use.
+
+The workflow needs no API key for these public endpoints. Upstream rate limits, network restrictions and GitHub Actions scheduling can delay or prevent updates. If a source temporarily fails, its previous records are retained and marked stale; a successful refresh replaces that source's current snapshot. No user prompts, credentials, private files or API keys are sent to discovery sources.
+
+Run manually with Node.js 20 or newer:
+
+    node scripts/discover-models.mjs
+
+This command makes public HTTP requests; it is separate from the static website. Do not run it in an offline environment.
