@@ -30,3 +30,10 @@ See CONTRIBUTING.md, SECURITY.md and docs/SOURCES-AND-METHODOLOGY.md. Add provid
 MIT applies to original project code. Provider names, models, documentation and trademarks belong to their respective owners. Inclusion is not endorsement; model and dataset licenses are separate.
 
 This is a community-maintained discovery directory, not a benchmark authority, uptime monitor, legal opinion or endorsement.
+
+## Global discovery coverage
+The project maintains a machine-readable registry of upstream discovery sources in `data/discovery-sources.json`. It includes structured model/provider catalogues, model hubs, inference-provider indexes, cloud model gardens and independent evaluation sources.
+
+These sources are deliberately not merged into one unqualified "complete world list": their coverage overlaps, schemas differ, and many are not primary sources. Use them to discover entries, deduplicate by canonical model/provider identifiers, and verify pricing, licenses, availability and technical claims against official documentation.
+
+The catalogue currently contains **37 manually curated provider/platform entries**. The upstream registries expand discovery beyond this starter set; they are not all represented as individual entries yet.
