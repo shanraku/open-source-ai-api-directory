@@ -1,12 +1,481 @@
 [
-{"id":"openai","name":"OpenAI","type":"hosted-api","type_label":"Hosted API","access":"paid","access_label":"Usage-based · verify","summary":"Hosted model APIs for text, reasoning, images, audio and developer workflows. Verify current model availability and terms in official documentation.","capabilities":["Text","Reasoning","Images","Audio","Embeddings"],"models":["GPT models"],"docs_url":"https://platform.openai.com/docs","source_url":"https://platform.openai.com/docs","status_url":"https://status.openai.com/","reviewed":"2026-11-20"},
-{"id":"anthropic","name":"Anthropic","type":"hosted-api","type_label":"Hosted API","access":"paid","access_label":"Usage-based · verify","summary":"Claude APIs with documentation for messages, tool use, streaming and model-specific limits.","capabilities":["Text","Reasoning","Vision","Tool use"],"models":["Claude models"],"docs_url":"https://docs.anthropic.com/","source_url":"https://docs.anthropic.com/","status_url":"https://status.anthropic.com/","reviewed":"2026-11-20"},
-{"id":"google-ai","name":"Google AI / Gemini","type":"hosted-api","type_label":"Hosted API","access":"free-tier","access_label":"Free tier may vary","summary":"Gemini developer APIs and model documentation. Quotas and commercial terms depend on product and region.","capabilities":["Text","Multimodal","Images","Audio","Embeddings"],"models":["Gemini models"],"docs_url":"https://ai.google.dev/gemini-api/docs","source_url":"https://ai.google.dev/gemini-api/docs","status_url":"https://status.cloud.google.com/","reviewed":"2026-11-20"},
-{"id":"mistral","name":"Mistral AI","type":"hosted-api","type_label":"Hosted API","access":"paid","access_label":"Usage-based · verify","summary":"Hosted APIs and open-weight model releases. Confirm the license of each individual model.","capabilities":["Text","Reasoning","Embeddings","OCR"],"models":["Mistral models"],"docs_url":"https://docs.mistral.ai/","source_url":"https://docs.mistral.ai/","status_url":"https://status.mistral.ai/","reviewed":"2026-11-20"},
-{"id":"cohere","name":"Cohere","type":"hosted-api","type_label":"Hosted API","access":"paid","access_label":"Usage-based · verify","summary":"Language, retrieval, reranking and embedding APIs with official developer documentation.","capabilities":["Text","Embeddings","Reranking","Retrieval"],"models":["Command","Embed","Rerank"],"docs_url":"https://docs.cohere.com/","source_url":"https://docs.cohere.com/","status_url":"https://status.cohere.com/","reviewed":"2026-11-20"},
-{"id":"huggingface","name":"Hugging Face","type":"open-models","type_label":"Model ecosystem","access":"self-hosted","access_label":"Self-host / hosted options","summary":"Model Hub, datasets, model cards and inference tooling. Licenses and restrictions vary by repository.","capabilities":["Model discovery","Datasets","Inference","Model cards"],"models":["Community models"],"docs_url":"https://huggingface.co/docs","source_url":"https://huggingface.co/docs","status_url":"https://status.huggingface.co/","reviewed":"2026-11-20"},
-{"id":"ollama","name":"Ollama","type":"local-runtime","type_label":"Local runtime","access":"self-hosted","access_label":"Run locally","summary":"Run supported language models locally and integrate through a local HTTP API. Hardware needs vary by model.","capabilities":["Local inference","Model library","HTTP API"],"models":["Local model catalogue"],"docs_url":"https://docs.ollama.com/","source_url":"https://docs.ollama.com/","status_url":"","reviewed":"2026-11-20"},
-{"id":"llamacpp","name":"llama.cpp","type":"local-runtime","type_label":"Local runtime","access":"self-hosted","access_label":"Self-hosted","summary":"Efficient local inference engine supporting GGUF model files across a range of hardware.","capabilities":["Local inference","Quantization","CPU/GPU"],"models":["GGUF-compatible models"],"docs_url":"https://github.com/ggml-org/llama.cpp","source_url":"https://github.com/ggml-org/llama.cpp","status_url":"","reviewed":"2026-11-20"},
-{"id":"vllm","name":"vLLM","type":"local-runtime","type_label":"Serving framework","access":"self-hosted","access_label":"Self-hosted","summary":"Open-source inference and serving engine designed for high-throughput model serving.","capabilities":["Serving","Batching","OpenAI-compatible API"],"models":["Supported model families"],"docs_url":"https://docs.vllm.ai/","source_url":"https://docs.vllm.ai/","status_url":"","reviewed":"2026-11-20"},
-{"id":"modelscope","name":"ModelScope","type":"open-models","type_label":"Model ecosystem","access":"self-hosted","access_label":"Check each model license","summary":"Model and dataset ecosystem with project-specific model cards, files and licensing information.","capabilities":["Model discovery","Datasets","Model cards"],"models":["Community models"],"docs_url":"https://www.modelscope.cn/","source_url":"https://www.modelscope.cn/","status_url":"","reviewed":"2026-11-20"}
+  {
+    "id": "openai",
+    "name": "OpenAI",
+    "type": "hosted-api",
+    "type_label": "Hosted API",
+    "access": "paid",
+    "access_label": "Usage-based · verify",
+    "summary": "Hosted model APIs for text, reasoning, images, audio and developer workflows. Verify current model availability and terms in official documentation.",
+    "capabilities": [
+      "Text",
+      "Reasoning",
+      "Images",
+      "Audio",
+      "Embeddings"
+    ],
+    "models": [
+      "GPT models"
+    ],
+    "docs_url": "https://platform.openai.com/docs",
+    "source_url": "https://platform.openai.com/docs",
+    "status_url": "https://status.openai.com/",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "anthropic",
+    "name": "Anthropic",
+    "type": "hosted-api",
+    "type_label": "Hosted API",
+    "access": "paid",
+    "access_label": "Usage-based · verify",
+    "summary": "Claude APIs with documentation for messages, tool use, streaming and model-specific limits.",
+    "capabilities": [
+      "Text",
+      "Reasoning",
+      "Vision",
+      "Tool use"
+    ],
+    "models": [
+      "Claude models"
+    ],
+    "docs_url": "https://docs.anthropic.com/",
+    "source_url": "https://docs.anthropic.com/",
+    "status_url": "https://status.anthropic.com/",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "google-ai",
+    "name": "Google AI / Gemini",
+    "type": "hosted-api",
+    "type_label": "Hosted API",
+    "access": "free-tier",
+    "access_label": "Free tier may vary",
+    "summary": "Gemini developer APIs and model documentation. Quotas and commercial terms depend on product and region.",
+    "capabilities": [
+      "Text",
+      "Multimodal",
+      "Images",
+      "Audio",
+      "Embeddings"
+    ],
+    "models": [
+      "Gemini models"
+    ],
+    "docs_url": "https://ai.google.dev/gemini-api/docs",
+    "source_url": "https://ai.google.dev/gemini-api/docs",
+    "status_url": "https://status.cloud.google.com/",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "mistral",
+    "name": "Mistral AI",
+    "type": "hosted-api",
+    "type_label": "Hosted API",
+    "access": "paid",
+    "access_label": "Usage-based · verify",
+    "summary": "Hosted APIs and open-weight model releases. Confirm the license of each individual model.",
+    "capabilities": [
+      "Text",
+      "Reasoning",
+      "Embeddings",
+      "OCR"
+    ],
+    "models": [
+      "Mistral models"
+    ],
+    "docs_url": "https://docs.mistral.ai/",
+    "source_url": "https://docs.mistral.ai/",
+    "status_url": "https://status.mistral.ai/",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "cohere",
+    "name": "Cohere",
+    "type": "hosted-api",
+    "type_label": "Hosted API",
+    "access": "paid",
+    "access_label": "Usage-based · verify",
+    "summary": "Language, retrieval, reranking and embedding APIs with official developer documentation.",
+    "capabilities": [
+      "Text",
+      "Embeddings",
+      "Reranking",
+      "Retrieval"
+    ],
+    "models": [
+      "Command",
+      "Embed",
+      "Rerank"
+    ],
+    "docs_url": "https://docs.cohere.com/",
+    "source_url": "https://docs.cohere.com/",
+    "status_url": "https://status.cohere.com/",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "huggingface",
+    "name": "Hugging Face",
+    "type": "open-models",
+    "type_label": "Model ecosystem",
+    "access": "self-hosted",
+    "access_label": "Self-host / hosted options",
+    "summary": "Model Hub, datasets, model cards and inference tooling. Licenses and restrictions vary by repository.",
+    "capabilities": [
+      "Model discovery",
+      "Datasets",
+      "Inference",
+      "Model cards"
+    ],
+    "models": [
+      "Community models"
+    ],
+    "docs_url": "https://huggingface.co/docs",
+    "source_url": "https://huggingface.co/docs",
+    "status_url": "https://status.huggingface.co/",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "ollama",
+    "name": "Ollama",
+    "type": "local-runtime",
+    "type_label": "Local runtime",
+    "access": "self-hosted",
+    "access_label": "Run locally",
+    "summary": "Run supported language models locally and integrate through a local HTTP API. Hardware needs vary by model.",
+    "capabilities": [
+      "Local inference",
+      "Model library",
+      "HTTP API"
+    ],
+    "models": [
+      "Local model catalogue"
+    ],
+    "docs_url": "https://docs.ollama.com/",
+    "source_url": "https://docs.ollama.com/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "llamacpp",
+    "name": "llama.cpp",
+    "type": "local-runtime",
+    "type_label": "Local runtime",
+    "access": "self-hosted",
+    "access_label": "Self-hosted",
+    "summary": "Efficient local inference engine supporting GGUF model files across a range of hardware.",
+    "capabilities": [
+      "Local inference",
+      "Quantization",
+      "CPU/GPU"
+    ],
+    "models": [
+      "GGUF-compatible models"
+    ],
+    "docs_url": "https://github.com/ggml-org/llama.cpp",
+    "source_url": "https://github.com/ggml-org/llama.cpp",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "vllm",
+    "name": "vLLM",
+    "type": "local-runtime",
+    "type_label": "Serving framework",
+    "access": "self-hosted",
+    "access_label": "Self-hosted",
+    "summary": "Open-source inference and serving engine designed for high-throughput model serving.",
+    "capabilities": [
+      "Serving",
+      "Batching",
+      "OpenAI-compatible API"
+    ],
+    "models": [
+      "Supported model families"
+    ],
+    "docs_url": "https://docs.vllm.ai/",
+    "source_url": "https://docs.vllm.ai/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "modelscope",
+    "name": "ModelScope",
+    "type": "open-models",
+    "type_label": "Model ecosystem",
+    "access": "self-hosted",
+    "access_label": "Check each model license",
+    "summary": "Model and dataset ecosystem with project-specific model cards, files and licensing information.",
+    "capabilities": [
+      "Model discovery",
+      "Datasets",
+      "Model cards"
+    ],
+    "models": [
+      "Community models"
+    ],
+    "docs_url": "https://www.modelscope.cn/",
+    "source_url": "https://www.modelscope.cn/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "groq",
+    "name": "Groq",
+    "type": "hosted-api",
+    "type_label": "Hosted inference API",
+    "access": "paid",
+    "access_label": "Terms / quotas vary",
+    "summary": "Hosted inference API with official developer documentation and model availability details.",
+    "capabilities": [
+      "Text",
+      "Vision models",
+      "Tool use",
+      "Streaming"
+    ],
+    "models": [
+      "Groq-hosted models"
+    ],
+    "docs_url": "https://console.groq.com/docs",
+    "source_url": "https://console.groq.com/docs",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "together",
+    "name": "Together AI",
+    "type": "hosted-api",
+    "type_label": "Hosted inference API",
+    "access": "paid",
+    "access_label": "Usage-based · verify",
+    "summary": "Hosted inference for a catalogue of open and proprietary models. Check model-specific availability and terms.",
+    "capabilities": [
+      "Text",
+      "Images",
+      "Embeddings",
+      "Fine-tuning"
+    ],
+    "models": [
+      "Hosted model catalogue"
+    ],
+    "docs_url": "https://docs.together.ai/",
+    "source_url": "https://docs.together.ai/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "fireworks",
+    "name": "Fireworks AI",
+    "type": "hosted-api",
+    "type_label": "Hosted inference API",
+    "access": "paid",
+    "access_label": "Usage-based · verify",
+    "summary": "Inference platform with model-serving APIs and deployment options. Confirm current model and endpoint support in docs.",
+    "capabilities": [
+      "Text",
+      "Vision",
+      "Tool calling",
+      "Fine-tuning"
+    ],
+    "models": [
+      "Fireworks model catalogue"
+    ],
+    "docs_url": "https://docs.fireworks.ai/",
+    "source_url": "https://docs.fireworks.ai/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "deepseek",
+    "name": "DeepSeek",
+    "type": "hosted-api",
+    "type_label": "Hosted API",
+    "access": "paid",
+    "access_label": "Check current terms",
+    "summary": "Official API documentation for DeepSeek models. Verify current model IDs, regional access and pricing directly.",
+    "capabilities": [
+      "Text",
+      "Reasoning",
+      "Tool calls"
+    ],
+    "models": [
+      "DeepSeek API models"
+    ],
+    "docs_url": "https://api-docs.deepseek.com/",
+    "source_url": "https://api-docs.deepseek.com/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "openrouter",
+    "name": "OpenRouter",
+    "type": "hosted-api",
+    "type_label": "API gateway",
+    "access": "paid",
+    "access_label": "Provider/model terms vary",
+    "summary": "Unified API gateway routing requests to multiple model providers. Check upstream provider, model and data terms.",
+    "capabilities": [
+      "Multi-provider routing",
+      "Model discovery",
+      "Fallback routing"
+    ],
+    "models": [
+      "Aggregated model catalogue"
+    ],
+    "docs_url": "https://openrouter.ai/docs",
+    "source_url": "https://openrouter.ai/docs",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "replicate",
+    "name": "Replicate",
+    "type": "hosted-api",
+    "type_label": "Model API platform",
+    "access": "paid",
+    "access_label": "Usage-based · verify",
+    "summary": "Run published machine-learning models through hosted APIs. Model-specific input, output, hardware and pricing vary.",
+    "capabilities": [
+      "Image generation",
+      "Audio",
+      "Video",
+      "Custom deployments"
+    ],
+    "models": [
+      "Community model catalogue"
+    ],
+    "docs_url": "https://replicate.com/docs",
+    "source_url": "https://replicate.com/docs",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "cloudflare-workers-ai",
+    "name": "Cloudflare Workers AI",
+    "type": "hosted-api",
+    "type_label": "Edge AI platform",
+    "access": "paid",
+    "access_label": "Plan and quota dependent",
+    "summary": "Run supported AI models on Cloudflare's network and integrate with Workers. Verify current model catalogue and plan limits.",
+    "capabilities": [
+      "Text",
+      "Embeddings",
+      "Image tasks",
+      "Workers integration"
+    ],
+    "models": [
+      "Workers AI catalogue"
+    ],
+    "docs_url": "https://developers.cloudflare.com/workers-ai/",
+    "source_url": "https://developers.cloudflare.com/workers-ai/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "aws-bedrock",
+    "name": "Amazon Bedrock",
+    "type": "hosted-api",
+    "type_label": "Cloud AI platform",
+    "access": "paid",
+    "access_label": "AWS pricing · verify",
+    "summary": "Managed access to foundation models and related AWS capabilities. Model availability and terms vary by region and provider.",
+    "capabilities": [
+      "Model choice",
+      "Agents",
+      "Knowledge bases",
+      "Guardrails"
+    ],
+    "models": [
+      "Bedrock model catalogue"
+    ],
+    "docs_url": "https://docs.aws.amazon.com/bedrock/",
+    "source_url": "https://docs.aws.amazon.com/bedrock/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "azure-ai-foundry",
+    "name": "Microsoft Azure AI Foundry",
+    "type": "hosted-api",
+    "type_label": "Cloud AI platform",
+    "access": "paid",
+    "access_label": "Azure pricing · verify",
+    "summary": "Microsoft platform for building and operating AI applications and model deployments. Regional and model eligibility varies.",
+    "capabilities": [
+      "Model catalogue",
+      "Deployment",
+      "Evaluation",
+      "Safety"
+    ],
+    "models": [
+      "Foundry model catalogue"
+    ],
+    "docs_url": "https://learn.microsoft.com/azure/ai-foundry/",
+    "source_url": "https://learn.microsoft.com/azure/ai-foundry/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "nvidia-nim",
+    "name": "NVIDIA NIM",
+    "type": "hosted-api",
+    "type_label": "Inference microservices",
+    "access": "self-hosted",
+    "access_label": "Entitlements vary",
+    "summary": "Deployable inference microservices for supported models. Review each NIM container's licensing, hardware and deployment terms.",
+    "capabilities": [
+      "Inference serving",
+      "Containers",
+      "GPU acceleration"
+    ],
+    "models": [
+      "NIM catalogue"
+    ],
+    "docs_url": "https://docs.nvidia.com/nim/",
+    "source_url": "https://docs.nvidia.com/nim/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "xai",
+    "name": "xAI API",
+    "type": "hosted-api",
+    "type_label": "Hosted API",
+    "access": "paid",
+    "access_label": "Usage-based · verify",
+    "summary": "Official developer API documentation for xAI models. Confirm current model names, capabilities and terms before use.",
+    "capabilities": [
+      "Text",
+      "Reasoning",
+      "Tool calling"
+    ],
+    "models": [
+      "Grok API models"
+    ],
+    "docs_url": "https://docs.x.ai/docs",
+    "source_url": "https://docs.x.ai/docs",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  },
+  {
+    "id": "perplexity-api",
+    "name": "Perplexity API",
+    "type": "hosted-api",
+    "type_label": "Hosted API",
+    "access": "paid",
+    "access_label": "Usage-based · verify",
+    "summary": "Developer APIs for search-grounded and model-powered workflows. Check current API products and source-citation behavior in docs.",
+    "capabilities": [
+      "Search-grounded answers",
+      "Text",
+      "Citations"
+    ],
+    "models": [
+      "Perplexity API models"
+    ],
+    "docs_url": "https://docs.perplexity.ai/",
+    "source_url": "https://docs.perplexity.ai/",
+    "status_url": "",
+    "reviewed": "2026-11-20"
+  }
 ]
