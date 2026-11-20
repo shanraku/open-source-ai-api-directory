@@ -1,84 +1,51 @@
-# Sources and methodology
+# Open Source AI & Model Intelligence
 
-## Source priority
-1. Provider API documentation and official changelogs.
-2. Official model cards, model repositories and license files.
-3. Official status pages and incident histories.
-4. Standards bodies and primary research for technical claims.
-5. Independent evaluations only when their methodology and date are visible.
+**ModelAtlas** is a source-first directory for discovering hosted AI APIs, open model ecosystems and local inference runtimes.
 
-## Initial official sources
-- OpenAI: https://platform.openai.com/docs
-- Anthropic: https://docs.anthropic.com/
-- Google Gemini: https://ai.google.dev/gemini-api/docs
-- Mistral: https://docs.mistral.ai/
-- Cohere: https://docs.cohere.com/
-- Hugging Face: https://huggingface.co/docs
-- Ollama: https://docs.ollama.com/
-- llama.cpp: https://github.com/ggml-org/llama.cpp
-- vLLM: https://docs.vllm.ai/
-- ModelScope: https://www.modelscope.cn/
+It differs from a consumer AI-tools list: the focus is technical decision-making—official API documentation, model ecosystems, local runtimes, source provenance and transparent source reachability checks.
 
-## Automated check meaning
-The scheduled script sends an unauthenticated HTTP HEAD request to a listed status page, or official documentation if no status page is listed. It records response category, timestamp and URL. It does not authenticate, call inference endpoints, measure latency, validate content, scrape prices or infer model availability. Some servers do not support HEAD; failures are inconclusive.
+## Principles
+- Prefer official documentation, model cards and license texts.
+- Never invent prices, quotas, benchmarks, uptime claims or license conclusions.
+- Link to authoritative sources so users can verify changing details.
+- Include local inference options alongside hosted APIs.
+- No API proxy, account system, tracking pixels or credential collection.
 
-## Data quality rules
-- Never infer a model license from provider general terms.
-- Link model-level cards and license files when adding individual models.
-- Do not label a model open source unless license and artifact availability support that wording; use open-weight when appropriate.
-- Do not publish prices without currency, unit, modality, effective date and direct official pricing source.
-- Do not call something free without specifying eligibility, quota and region.
-- Distinguish provider uptime from public website reachability.
-- Date-stamp reviews and remove dead or misleading entries.
+## Automatic source checks
+A GitHub Actions workflow runs weekly and can also be started manually from the Actions tab. It checks a public status page when listed, otherwise official documentation, using HTTP HEAD requests. It writes a timestamped snapshot to data/source-status.json.
 
-This is a community discovery directory, not a benchmark authority, uptime monitor, legal opinion or endorsement.
+A reachable webpage is not proof that an API is operational, that a model is available to your account, or that latency/quality is good. Some sites reject HEAD requests or block CI networks. A failed check is inconclusive. This workflow does not scrape pricing or make model API calls.
 
-## Additional official provider documentation
-- Groq: https://console.groq.com/docs
-- Together AI: https://docs.together.ai/
-- Fireworks AI: https://docs.fireworks.ai/
-- DeepSeek: https://api-docs.deepseek.com/
-- OpenRouter: https://openrouter.ai/docs
-- Replicate: https://replicate.com/docs
-- Cloudflare Workers AI: https://developers.cloudflare.com/workers-ai/
-- Amazon Bedrock: https://docs.aws.amazon.com/bedrock/
-- Microsoft Azure AI Foundry: https://learn.microsoft.com/azure/ai-foundry/
-- NVIDIA NIM: https://docs.nvidia.com/nim/
-- xAI API: https://docs.x.ai/docs
-- Perplexity API: https://docs.perplexity.ai/
+GitHub may delay scheduled workflows. No paid service is required by this repository, but GitHub service limits apply.
 
-## Discovery cross-checks (not primary evidence)
-- Hugging Face Inference Providers partner overview: https://huggingface.co/docs/inference-providers/en/index
-- Vercel AI Gateway provider catalogue: https://vercel.com/ai-gateway/models/providers
+## Run locally
+Requires Node.js 20 or newer. Serve this folder using a static file server; browser fetch may not work with file:// URLs. Refresh the snapshot manually with:
 
-These cross-check pages help discover additional providers and integrations. Individual entries should still link to the provider's own official documentation. Partner listings do not establish price, uptime, model rights or universal feature support.
+    node scripts/check-sources.mjs
+
+## Contributing
+See CONTRIBUTING.md, SECURITY.md and docs/SOURCES-AND-METHODOLOGY.md. Add providers only with authoritative links. Model-level licenses must be checked individually.
+
+## License
+MIT applies to original project code. Provider names, models, documentation and trademarks belong to their respective owners. Inclusion is not endorsement; model and dataset licenses are separate.
+
+This is a community-maintained discovery directory, not a benchmark authority, uptime monitor, legal opinion or endorsement.
+
+## Global discovery coverage
+The project maintains a machine-readable registry of upstream discovery sources in `data/discovery-sources.json`. It includes structured model/provider catalogues, model hubs, inference-provider indexes, cloud model gardens and independent evaluation sources.
+
+These sources are deliberately not merged into one unqualified "complete world list": their coverage overlaps, schemas differ, and many are not primary sources. Use them to discover entries, deduplicate by canonical model/provider identifiers, and verify pricing, licenses, availability and technical claims against official documentation.
+
+The catalogue currently contains **37 manually curated provider/platform entries**. The upstream registries expand discovery beyond this starter set; they are not all represented as individual entries yet.
 
 
-## Global discovery registries and provider ecosystems
-These are discovery inputs, not substitutes for primary provider evidence:
+## Model discovery sync
+The scheduled model sync currently uses two public discovery endpoints:
+- OpenRouter public model catalogue: https://openrouter.ai/api/v1/models
+- Hugging Face Hub public model metadata: https://huggingface.co/api/models?limit=100&sort=downloads&direction=-1&full=true
 
-- Models.dev live catalogue and API: https://models.dev/ — open-source structured provider/model database; API examples include https://models.dev/api.json?type=all, https://models.dev/models.json?type=all and https://models.dev/catalog.json?type=all.
-- Hugging Face Inference Providers: https://huggingface.co/docs/inference-providers/en/providers — provider integration index; each provider's own docs remain the authority for its terms.
-- OpenRouter model catalogue and rankings: https://openrouter.ai/models and https://openrouter.ai/rankings — useful for model/provider discovery and usage-based rankings, not universal market share.
-- Hugging Face Hub API: https://huggingface.co/docs/hub/api — model, dataset and organization discovery; repository metadata and model cards must be checked individually.
-- Artificial Analysis: https://artificialanalysis.ai/ — independent model evaluations and comparisons; methodology, coverage and access conditions must be reviewed.
-- LMArena: https://lmarena.ai/ — human-preference evaluation context; rankings are not a substitute for task-specific testing.
+The first is a gateway-specific catalogue; the second is a bounded sample of popular Hub models, not a complete export. Neither source is a universal inventory. The sync stores source IDs, upstream IDs, source URLs, selected public metadata, refresh timestamps and explicit discovery-only confidence. It does not infer open-source status, legal compatibility, safety, quality, regional availability or current price.
 
-### Additional provider documentation discovered through the Hugging Face ecosystem
-- Baseten: https://docs.baseten.co/
-- Cerebras: https://inference-docs.cerebras.ai/
-- CoreWeave: https://docs.coreweave.com/
-- DeepInfra: https://deepinfra.com/docs
-- DigitalOcean Gradient AI: https://docs.digitalocean.com/products/gradient-ai/
-- Featherless AI: https://docs.featherless.ai/
-- Liquid AI: https://docs.liquid.ai/
-- Moonshot AI: https://platform.moonshot.ai/docs/
-- Nebius AI: https://docs.nebius.com/
-- Novita AI: https://novita.ai/docs
-- Parasail: https://docs.parasail.io/
-- Prime Intellect: https://docs.primeintellect.ai/
-- Reka AI: https://docs.reka.ai/
-- Tencent Hunyuan: https://cloud.tencent.com/document/product/1729
-- Z.ai / Zhipu AI: https://docs.z.ai/
+License metadata is only copied from a public model card field when present. Missing metadata remains explicitly unknown. Model cards and linked license files must still be reviewed. If an upstream source fails, prior records from that source are retained with a stale marker; successful source refreshes replace that source's snapshot.
 
-Do not infer a provider's country, ownership, legal jurisdiction, model license or data residency from its name. Add those fields only when supported by a direct authoritative source.
+Do not add endpoints that require private tokens to a public workflow without a security review. Do not store credentials in the data catalogue. Respect provider terms, API rate limits, pagination and attribution requirements.
