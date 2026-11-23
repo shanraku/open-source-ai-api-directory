@@ -1,1 +1,228 @@
-{"generated_at":null,"note":"No automated snapshot has run yet. The weekly workflow creates the first snapshot after it runs.","sources":{}}
+{
+  "generated_at": "2026-11-23T06:32:07.034Z",
+  "note": "HTTP reachability only; this does not establish API uptime, model availability or service quality.",
+  "sources": {
+    "openai": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:48.915Z",
+      "checked_url": "https://status.openai.com/"
+    },
+    "anthropic": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:49.787Z",
+      "checked_url": "https://status.anthropic.com/"
+    },
+    "google-ai": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:49.967Z",
+      "checked_url": "https://status.cloud.google.com/"
+    },
+    "mistral": {
+      "result": "HTTP 403",
+      "http_status": 403,
+      "checked_at": "2026-11-23T06:31:50.057Z",
+      "checked_url": "https://status.mistral.ai/"
+    },
+    "cohere": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:50.161Z",
+      "checked_url": "https://status.cohere.com/"
+    },
+    "huggingface": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:50.771Z",
+      "checked_url": "https://status.huggingface.co/"
+    },
+    "ollama": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:51.252Z",
+      "checked_url": "https://docs.ollama.com/"
+    },
+    "llamacpp": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:51.413Z",
+      "checked_url": "https://github.com/ggml-org/llama.cpp"
+    },
+    "vllm": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:51.920Z",
+      "checked_url": "https://docs.vllm.ai/"
+    },
+    "modelscope": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:52.054Z",
+      "checked_url": "https://www.modelscope.cn/"
+    },
+    "groq": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:54.641Z",
+      "checked_url": "https://console.groq.com/docs"
+    },
+    "together": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:54.967Z",
+      "checked_url": "https://docs.together.ai/"
+    },
+    "fireworks": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:55.487Z",
+      "checked_url": "https://docs.fireworks.ai/"
+    },
+    "deepseek": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:55.667Z",
+      "checked_url": "https://api-docs.deepseek.com/"
+    },
+    "openrouter": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:56.446Z",
+      "checked_url": "https://openrouter.ai/docs"
+    },
+    "replicate": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:56.812Z",
+      "checked_url": "https://replicate.com/docs"
+    },
+    "cloudflare-workers-ai": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:57.031Z",
+      "checked_url": "https://developers.cloudflare.com/workers-ai/"
+    },
+    "aws-bedrock": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:57.102Z",
+      "checked_url": "https://docs.aws.amazon.com/bedrock/"
+    },
+    "azure-ai-foundry": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:57.410Z",
+      "checked_url": "https://learn.microsoft.com/azure/ai-foundry/"
+    },
+    "nvidia-nim": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:57.771Z",
+      "checked_url": "https://docs.nvidia.com/nim/"
+    },
+    "xai": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:57.906Z",
+      "checked_url": "https://docs.x.ai/docs"
+    },
+    "perplexity-api": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:58.100Z",
+      "checked_url": "https://docs.perplexity.ai/"
+    },
+    "baseten": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:58.893Z",
+      "checked_url": "https://docs.baseten.co/"
+    },
+    "cerebras": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:59.393Z",
+      "checked_url": "https://inference-docs.cerebras.ai/"
+    },
+    "coreweave": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:59.583Z",
+      "checked_url": "https://docs.coreweave.com/"
+    },
+    "deepinfra": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:31:59.709Z",
+      "checked_url": "https://deepinfra.com/docs"
+    },
+    "digitalocean": {
+      "result": "HTTP 404",
+      "http_status": 404,
+      "checked_at": "2026-11-23T06:31:59.977Z",
+      "checked_url": "https://docs.digitalocean.com/products/gradient-ai/"
+    },
+    "featherless": {
+      "result": "Check failed",
+      "error": "Network or endpoint restriction",
+      "checked_at": "2026-11-23T06:32:00.150Z",
+      "checked_url": "https://docs.featherless.ai/"
+    },
+    "liquid": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:32:00.217Z",
+      "checked_url": "https://docs.liquid.ai/"
+    },
+    "moonshotai": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:32:00.686Z",
+      "checked_url": "https://platform.moonshot.ai/docs/"
+    },
+    "nebius": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:32:02.543Z",
+      "checked_url": "https://docs.nebius.com/"
+    },
+    "novita": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:32:02.753Z",
+      "checked_url": "https://novita.ai/docs"
+    },
+    "parasail": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:32:03.371Z",
+      "checked_url": "https://docs.parasail.io/"
+    },
+    "primeintellect": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:32:03.798Z",
+      "checked_url": "https://docs.primeintellect.ai/"
+    },
+    "reka": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:32:04.377Z",
+      "checked_url": "https://docs.reka.ai/"
+    },
+    "tencent-hunyuan": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:32:05.267Z",
+      "checked_url": "https://cloud.tencent.com/document/product/1729"
+    },
+    "zai": {
+      "result": "Reachable",
+      "http_status": 200,
+      "checked_at": "2026-11-23T06:32:06.470Z",
+      "checked_url": "https://docs.z.ai/"
+    }
+  }
+}
